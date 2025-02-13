@@ -1,6 +1,28 @@
 @import "tailwindcss";
 
-body {
-  width: 100vw;
-  overflow-x: hidden;
+:root {
+  --gradient-gold: linear-gradient(to right, rgb(145, 127, 105), rgb(250, 235, 209));
 }
+
+.gradient-gold {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: var(--gradient-gold);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+

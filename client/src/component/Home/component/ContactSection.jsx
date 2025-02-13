@@ -1,8 +1,10 @@
 function ContactSection() {
   return (
     <>
-      <div className="flex shrink-0 mt-28 max-w-full h-0.5 w-full bg-gray-700 max-md:mt-10" />
-      <div className="flex flex-wrap gap-3 items-center self-center mt-32 text-4xl font-semibold leading-tight uppercase max-md:mt-10 max-md:max-w-full text-white">
+      {/* Đường kẻ ngăn cách */}
+      <div data-aos="fade-up" className="flex shrink-0 mt-32 max-w-full h-0.5 w-full max-md:mt-10 max-md:mr-1 
+          bg-[linear-gradient(to_right,rgb(36,34,32),rgb(105,95,80),rgb(36,34,32))]"/>
+      <div className="flex flex-wrap gap-3 items-center self-center mt-32 text-4xl font-semibold leading-tight uppercase max-md:mt-10 max-md:max-w-full gradient-gold">
         <div className="self-stretch my-auto max-md:max-w-full">
           Thank you for scrolling here
         </div>

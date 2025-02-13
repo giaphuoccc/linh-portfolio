@@ -11,7 +11,7 @@ function Highlights() {
         {highlights.map((highlight, index) => (
           <div key={index} className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
             <div className="flex grow gap-2 max-md:mt-8">
-              <div className="grow text-8xl font-semibold leading-tight max-md:text-4xl text-white">
+              <div className="grow text-8xl font-semibold leading-tight max-md:text-4xl gradient-gold">
                 {highlight.number}
               </div>
               <div className="my-auto text-4xl font-medium leading-10 text-orange-200">
