@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import './index.css';
 
 import Home from "./component/Home/homePage";
+import About from "./component/About/aboutPage";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,7 +24,8 @@ const App = () => {
       ) : (
         <div className="fade-in">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/about" element={<About/>} />
           </Routes>
         </div>
       )}

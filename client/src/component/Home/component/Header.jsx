@@ -1,16 +1,23 @@
-function Header() {
+import { useNavigate } from "react-router-dom";
+
+const Header = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="flex flex-wrap gap-5 justify-between w-full text-2xl text-orange-200 max-md:max-w-full">
-      <div className="flex gap-2 items-center whitespace-nowrap">
-        <div className="self-stretch my-auto">Linh</div>
-        <div className="flex shrink-0 self-stretch my-auto h-0.5 bg-orange-200 w-[25px]" />
-        <div className="self-stretch my-auto">Quach</div>
+    <div className="flex flex-wrap gap-5 justify-between max-w-full text-2xl text-black w-[943px]">
+      <div className="flex gap-2 items-center whitespace-nowrap ">
+        <div className="self-stretch my-auto text-[#D9C4A9]">Linh</div>
+        <div className="flex shrink-0 self-stretch my-auto h-0.5 bg-[#D9C4A9] w-[20px]" />
+        <div className="self-stretch my-auto text-[#D9C4A9]">Quach</div>
       </div>
-      <button className="focus:outline-none focus:ring-2 focus:ring-orange-200 focus:ring-opacity-50 hover:text-white transition-colors" aria-label="About me">
+      
+      <div 
+        className="text-[#D9C4A9] cursor-pointer" 
+        onClick={() => navigate("/about")}>
         About me
-      </button>
+      </div>
     </div>
   );
-}
+};
 
 export default Header;

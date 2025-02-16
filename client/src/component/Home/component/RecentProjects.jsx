@@ -1,35 +1,26 @@
-function RecentProjects() {
+import ProjectCard from './ProjectCard';
+
+const RecentProjects = () => {
   const projects = [
-    { image: 'https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/32a29e798e231316888adcf2abc393bfde9d7ba3c726b16956cc2820153739ae?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&', title: 'Pharmacity', type: 'Landing page' },
-    { image: 'https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/3a5edca4e77b62842f3b9486826542622a7ed1ef50aac2b88502555bab11dec8?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&', title: 'Pharmacity', type: 'Landing page' },
-    { image: 'https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/60906db2b739d80dfca5d811fd7993c86d65f827b6fc7421019bef8186246913?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&', title: 'Pharmacity', type: 'Landing page' },
-    { image: 'https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/32a29e798e231316888adcf2abc393bfde9d7ba3c726b16956cc2820153739ae?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&', title: 'Pharmacity', type: 'Landing page' },
+    { imageSrc: "https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/22a8c92052439c2492d139e0095d70f82d4b2870b4ae66792fd60dd80acb1a06?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&", title: "Pharmacity", category: "Landing page", iconSrc: "https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/76b9f2e8c13ebbc5e850d5e96029329e983b795faffa841d8f5405bd9282f605?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&" },
+    { imageSrc: "https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/22a8c92052439c2492d139e0095d70f82d4b2870b4ae66792fd60dd80acb1a06?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&", title: "Pharmacity", category: "Landing page", iconSrc: "https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/c737c4bceeb4f805bf10ba7de222378cda5da976af5ceb8e35769835824a4ddd?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&" },
+    { imageSrc: "https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/22a8c92052439c2492d139e0095d70f82d4b2870b4ae66792fd60dd80acb1a06?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&", title: "Pharmacity", category: "Landing page", iconSrc: "https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/2de4a1fdcef4780395b840ab5b7177179772717d9d0bbd57bdcfe20dbbda1df5?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&" },
+    { imageSrc: "https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/22a8c92052439c2492d139e0095d70f82d4b2870b4ae66792fd60dd80acb1a06?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&", title: "Pharmacity", category: "Landing page", iconSrc: "https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/3f6a7e981ebfb7cac4015f619e027f75fd1c9b002aa0706ef7e0d4dfd4df2d9c?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&" }
   ];
 
   return (
-    <div className="grid grid-cols-2 gap-8 mt-16">
-      {projects.map((project, index) => (
-        <div key={index} className="flex flex-col w-full text-xl font-semibold tracking-wider leading-snug text-orange-200 uppercase">
-          <img
-            loading="lazy"
-            src={project.image}
-            className="object-cover w-full rounded-2xl aspect-square"
-            alt={`${project.title} ${project.type}`}
-          />
-          <div className="flex gap-3 items-center self-start mt-6">
-            <div className="self-stretch my-auto">{project.title}</div>
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/5db40a49a8a0f3f3c770f2df8a37c8dc18adb9b12c7201fea769c7b612079535?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&"
-              className="object-contain shrink-0 self-stretch my-auto w-3 aspect-square"
-              alt=""
-            />
-            <div className="self-stretch my-auto">{project.type}</div>
-          </div>
-        </div>
-      ))}
+    <div className="w-full max-w-[940px] mx-auto">
+      <h2 className="mt-30 text-5xl font-medium leading-tight gradient-gold">
+        And recently...
+      </h2>
+
+      <div className="grid grid-cols-2 gap-6 mt-16 max-md:grid-cols-1 max-md:mt-10">
+        {projects.map((project, index) => (
+          <ProjectCard key={index} {...project} />
+        ))}
+      </div>
     </div>
   );
-}
+};
 
 export default RecentProjects;

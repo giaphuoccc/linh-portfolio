@@ -1,99 +1,62 @@
-import AOS from "aos";
 import { useEffect } from "react";
+import AOS from "aos";
 import "aos/dist/aos.css";
 
 import Header from './component/Header.jsx';
-import Highlights from './component/Highlights';
-import ProjectSection from './component/ProjectSection';
-import BrandLogos from './component/BrandLogos';
-import RecentProjects from './component/RecentProjects';
-import ContactSection from './component/ContactSection';
+import ProjectCard from './component/ProjectCard.jsx';
+import BrandContributions from './component/BrandContribution.jsx';
+import RecentProjects from './component/RecentProjects.jsx';
+import Introduction from './component/Introduction.jsx';
 import Footer from './component/Footer.jsx';
 
-function HomePage() {
+const Portfolio = () => {
   useEffect(() => {
-    AOS.init({
-      duration: 1000, // Thời gian animation (ms)
-      once: true, // Animation chỉ chạy 1 lần
-      easing: "ease-in-out", // Hiệu ứng chuyển động
-    });
+    AOS.init({ duration: 3000, once: true });
   }, []);
 
+  const mainProjects = [
+    { imageSrc: "https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/318da8905dcc088fa15065db51d2ff4b9221e3f03a50e1f74273b1c6d256d486?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&", title: "Pharmacity", category: "Landing page", iconSrc: "https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/7ba013f64d390806c165c86785fce5900357a09f2b70e501f351d3dd80c046f7?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&" },
+    { imageSrc: "https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/318da8905dcc088fa15065db51d2ff4b9221e3f03a50e1f74273b1c6d256d486?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&", title: "Pharmacity", category: "Landing page", iconSrc: "https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/0404193747db913381f0cc842754092042d98933593f7a2754183fbecd6fd541?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&" },
+    { imageSrc: "https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/318da8905dcc088fa15065db51d2ff4b9221e3f03a50e1f74273b1c6d256d486?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&", title: "Pharmacity", category: "Landing page", iconSrc: "https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/25fd667b634f9ac91d3bcacd43da27fd94ac1fb7da987e2bcb5a6fcc375d7bea?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&" },
+  ];
+
   return (
-    <div className="flex overflow-hidden flex-col py-12 bg-zinc-900 bg-cover bg-center min-h-screen">
-      <div className="flex flex-col px-20 w-full max-w-full mx-0 max-md:px-5">
-        <Header />
-        
-        {/* Thêm hiệu ứng fade-up */}
-        <div
-          data-aos="fade-up"
-          className="self-start mt-32 text-6xl font-bold leading-tight max-md:mt-10 max-md:text-4xl text-transparent gradient-gold"
-        >
-          {"Linh's Portfolio"}
+    <div className="flex overflow-hidden flex-col items-center px-20 py-12 bg-zinc-900 max-md:px-5">
+      <Header data-aos="fade-down"/>
+      <div data-aos="fade-down" className="flex flex-col mt-32 max-w-full w-[940px] max-md:mt-10">
+        <Introduction data-aos="fade-down"/>
+
+        {/* Đường kẻ vàng */}
+        <div data-aos="fade-down" className="flex shrink-0 mt-24 h-0.5 w-full max-w-[940px] mx-auto px-20 max-md:px-5 max-md:mt-10 
+          bg-[linear-gradient(to_right,rgb(36,34,32),rgb(105,95,80),rgb(36,34,32))]"/>
+
+        <div data-aos="fade-down" className="flex flex-col mt-24 w-full max-w-[940px] max-md:mt-10 max-md:max-w-full">
+          <h2 data-aos="fade-down" className="text-5xl font-medium leading-[62px] w-[337px] max-md:text-4xl max-md:leading-[58px] gradient-gold">
+            Explore my latest works
+          </h2>
+
+          {mainProjects.map((project, index) => (
+            <div data-aos="fade-down" data-aos-delay={index * 300} key={index}>
+              <ProjectCard {...project} />
+            </div>
+          ))}
+
+          <div data-aos="fade-down" data-aos-delay={300}>
+            <RecentProjects />
+          </div>
         </div>
 
-        <div
-          data-aos="fade-up"
-          className="mt-8 text-4xl font-medium leading-[50px] w-[832px] max-md:max-w-full text-[#D9C4A9]"
-        >
-          Design is a journey where empathy helps us create a connection between
-          people and the object. This way, design becomes more than just a
-          product, it becomes an experience.
+        {/* Đường kẻ vàng */}
+        <div data-aos="fade-down" className="flex shrink-0 mt-24 h-0.5 w-full max-w-[940px] mx-auto px-20 max-md:px-5 max-md:mt-10 
+          bg-[linear-gradient(to_right,rgb(36,34,32),rgb(105,95,80),rgb(36,34,32))]"/>
+
+        <div data-aos="fade-down">
+          <BrandContributions />
         </div>
-
-        {/* Đường kẻ ngăn cách */}
-        <div data-aos="fade-up" className="flex shrink-0 mt-32 max-w-full h-0.5 w-full max-md:mt-10 max-md:mr-1 
-            bg-[linear-gradient(to_right,rgb(36,34,32),rgb(105,95,80),rgb(36,34,32))]"/>
-
-        {/* Hiệu ứng slide-in cho phần giới thiệu thương hiệu */}
-        <div data-aos="fade-right" className="mt-32 text-5xl font-medium leading-[62px] w-[738px] max-md:mt-10 max-md:max-w-full max-md:text-4xl max-md:leading-[58px] gradient-gold">
-          Proud to have contributed
-          <br />
-          {"to these brands' projects"}
-        </div>
-
-        {/* UI UX Design */}
-        <div data-aos="fade-up" className="self-start mt-16 text-4xl font-medium leading-tight max-md:mt-10 gradient-gold">
-          UI UX design
-        </div>
-        <BrandLogos type="uiux" />
-
-        {/* Graphic Design */}
-        <div data-aos="fade-up" className="self-start mt-16 text-4xl font-medium leading-tight max-md:mt-10 gradient-gold">
-          Graphic design
-        </div>
-        <BrandLogos type="graphic" />
-
-        {/* Đường kẻ */}
-        <div data-aos="fade-up" className="flex shrink-0 mt-32 max-w-full h-0.5 w-full max-md:mt-10 max-md:mr-1 bg-[linear-gradient(to_right,rgb(36,34,32),rgb(105,95,80),rgb(36,34,32))]"/>
-
-        {/* Highlights */}
-        <div data-aos="fade-left" className="self-start mt-32 text-5xl font-medium leading-tight max-md:mt-10 max-md:ml-1 max-md:text-4xl gradient-gold">
-          The highlights
-        </div>
-        <Highlights />
-
-        {/* Đường kẻ ngăn cách */}
-        <div data-aos="fade-up" className="flex shrink-0 mt-32 max-w-full h-0.5 w-full max-md:mt-10 max-md:mr-1 
-            bg-[linear-gradient(to_right,rgb(36,34,32),rgb(105,95,80),rgb(36,34,32))]"/>
-
-        {/* Dự án */}
-        <div data-aos="fade-up" className="self-start mt-32 text-5xl font-medium leading-tight max-md:mt-10 max-md:text-4xl gradient-gold">
-          Explore my <br/> latest works
-        </div>
-        <ProjectSection />
-
-        {/* Recent Projects */}
-        <div data-aos="fade-up" className="self-start mt-32 text-5xl font-medium leading-tight max-md:mt-10 max-md:text-4xl gradient-gold">
-          And recently...
-        </div>
-        <RecentProjects />
-
-        <ContactSection />
-      </div>
-      <Footer />
+      </div >
+        <Footer data-aos="fade-down"/>
     </div>
   );
-}
+};
 
-export default HomePage;
+export default Portfolio;
