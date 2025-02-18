@@ -1,43 +1,38 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
-const ExperienceItem = ({ title, date, company, description, companyDescription }) => {
-    return (
-      <div className="flex flex-col mt-10 max-w-full w-[620px]">
-        <div className="flex flex-col w-full max-md:max-w-full">
-          <div className="flex flex-wrap gap-10 justify-between items-center w-full max-md:max-w-full">
-            <div className="self-stretch my-auto text-[32px] font-bold leading-tight">
-              {title}
-            </div>
-            <div className="self-stretch my-auto text-xl leading-snug">
-              {date}
-            </div>
-          </div>
-          <div className="mt-2 text-xl leading-snug uppercase max-md:max-w-full">
-            <span className="font-bold">{company}</span> - {companyDescription}
-          </div>
+function ExperienceItem({ title, company, description, period, responsibilities, isLast }) {
+  return (
+    <>
+      <div className="flex flex-col w-full">
+        <div className="flex w-full justify-between items-center">
+          <div className="text-3xl font-semibold leading-tight">{title}</div>
+          <div className="text-xl leading-snug text-right">{period}</div>
         </div>
-        {description && (
-          <div className="mt-5 text-xl  leading-7 max-md:max-w-full">
-            {description.split('\n').map((item, index) => (
-              <React.Fragment key={index}>
-                {item}
-                <br />
-              </React.Fragment>
+        <div className="mt-1 text-xl leading-snug italic">
+          <span className="font-bold">{company}</span> - {description}
+        </div>
+        {responsibilities.length > 0 && (
+          <ul className="mt-3 text-xl leading-[32px] list-disc pl-5">
+            {responsibilities.map((resp, index) => (
+              <li key={index}>{resp}</li>
             ))}
-          </div>
+          </ul>
         )}
       </div>
-    );
-  };
+      
+      {/* Thêm Divider nếu không phải item cuối cùng */}
+      {!isLast && <div className="my-20 w-full bg-[#E0DEDA] min-h-[2px]" />}
+    </>
+  );
+}
 
-// ✅ Adding PropTypes for validation
 ExperienceItem.propTypes = {
   title: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
+  period: PropTypes.string.isRequired,
   company: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  companyDescription: PropTypes.arrayOf(PropTypes.string).isRequired,
+  responsibilities: PropTypes.arrayOf(PropTypes.string).isRequired,
+  isLast: PropTypes.bool, // 🔥 Thêm prop để kiểm tra item cuối cùng
 };
 
 export default ExperienceItem;

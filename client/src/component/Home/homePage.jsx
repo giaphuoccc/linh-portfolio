@@ -11,7 +11,15 @@ import Footer from './component/Footer.jsx';
 
 const Portfolio = () => {
   useEffect(() => {
-    AOS.init({ duration: 3000, once: true });
+    AOS.init({
+      duration: 1200,  // 🔥 Hiệu ứng chạy trong 1200ms
+      offset: 120,     // 🔥 Hiệu ứng kích hoạt khi phần tử cách 120px từ đáy viewport
+      easing: "ease-in-out",
+      once: false,     // 🔥 Cho phép hiệu ứng chạy lại khi cuộn lên/xuống
+      mirror: false,   // 🔥 Tránh hiệu ứng bị giật khi scroll ngược lên
+    });
+  
+    AOS.refresh(); // 🔥 Đảm bảo AOS cập nhật khi DOM thay đổi
   }, []);
 
   const mainProjects = [
@@ -22,39 +30,48 @@ const Portfolio = () => {
 
   return (
     <div className="flex overflow-hidden flex-col items-center px-20 py-12 bg-zinc-900 max-md:px-5">
-      <Header data-aos="fade-down"/>
-      <div data-aos="fade-down" className="flex flex-col mt-32 max-w-full w-[940px] max-md:mt-10">
-        <Introduction data-aos="fade-down"/>
+      <Header data-aos="fade-down" />
+
+      <div className="flex flex-col mt-32 max-w-full w-[940px] max-md:mt-10">
+        <Introduction data-aos="fade-down" />
 
         {/* Đường kẻ vàng */}
-        <div data-aos="fade-down" className="flex shrink-0 mt-24 h-0.5 w-full max-w-[940px] mx-auto px-20 max-md:px-5 max-md:mt-10 
-          bg-[linear-gradient(to_right,rgb(36,34,32),rgb(105,95,80),rgb(36,34,32))]"/>
+        <div className="flex shrink-0 mt-24 h-0.5 w-full max-w-[940px] mx-auto px-20 max-md:px-5 max-md:mt-10 
+          bg-[linear-gradient(to_right,rgb(36,34,32),rgb(105,95,80),rgb(36,34,32))]"
+          data-aos="fade-down"
+        />
 
-        <div data-aos="fade-down" className="flex flex-col mt-24 w-full max-w-[940px] max-md:mt-10 max-md:max-w-full">
-          <h2 data-aos="fade-down" className="text-5xl font-medium leading-[62px] w-[337px] max-md:text-4xl max-md:leading-[58px] gradient-gold">
+        <div className="flex flex-col mt-24 w-full max-w-[940px] max-md:mt-10 max-md:max-w-full">
+          <h2 className="text-5xl font-medium leading-[62px] w-[337px] max-md:text-4xl max-md:leading-[58px] gradient-gold"
+              data-aos="fade-down">
             Explore my latest works
           </h2>
 
           {mainProjects.map((project, index) => (
-            <div data-aos="fade-down" data-aos-delay={index * 300} key={index}>
+            <div data-aos="fade-down" key={index}>
               <ProjectCard {...project} />
             </div>
           ))}
 
-          <div data-aos="fade-down" data-aos-delay={300}>
+          <div data-aos="fade-down">
             <RecentProjects />
           </div>
         </div>
 
         {/* Đường kẻ vàng */}
-        <div data-aos="fade-down" className="flex shrink-0 mt-24 h-0.5 w-full max-w-[940px] mx-auto px-20 max-md:px-5 max-md:mt-10 
-          bg-[linear-gradient(to_right,rgb(36,34,32),rgb(105,95,80),rgb(36,34,32))]"/>
+        <div className="flex shrink-0 mt-24 h-0.5 w-full max-w-[940px] mx-auto px-20 max-md:px-5 max-md:mt-10 
+          bg-[linear-gradient(to_right,rgb(36,34,32),rgb(105,95,80),rgb(36,34,32))]"
+          data-aos="fade-down"
+        />
 
         <div data-aos="fade-down">
           <BrandContributions />
         </div>
-      </div >
-        <Footer data-aos="fade-down"/>
+      </div>
+      
+      <div data-aos="fade-down" className="flex flex-col items-center w-full">
+          <Footer />
+      </div>
     </div>
   );
 };

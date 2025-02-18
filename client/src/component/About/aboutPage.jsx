@@ -1,86 +1,169 @@
-import SectionHeader from './component/SectionHeader.jsx';
-import ExperienceList from './component/ExperienceList.jsx';
-import Divider from './component/Divider.jsx';
-import SkillsAndTools from './component/SkillsAndTools.jsx';
-import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-const AboutMe = () => {
-  const navigate = useNavigate();
+import Header from './component/Header.jsx';
+import ExperienceItem from './component/ExperienceItem.jsx';
+import Footer from './component/Footer.jsx';
+import InfoSection from './component/InfoSection.jsx';
+import ExperienceSection from './component/ExperienceSection.jsx';
+import Divider from './component/Divider.jsx';
+
+const experiences = [
+  {
+    title: "Senior Product designer",
+    company: "FINVIET",
+    description: "B2B2C fintech company",
+    period: "08/2022 - Present",
+    responsibilities: [
+      "Responsible for enhancing M2B2C e-commerce platform's user experience.",
+      "Manage and maintain a library of design assets and resources.",
+      "Communicate and work closely with stakeholders (PO, BOD, Business Unit...) to gather requirements, provide updates, and get feedbacks and improve, create new features."
+    ]
+  },
+  {
+    title: "Product designer",
+    company: "PHARMACITY",
+    description: "The retail pharmacy chain in Vietnam.",
+    period: "08/2021 - 08/2022",
+    responsibilities: [
+      "Work together with the product team to create a wireframe, prototype new features, and improve existing ones on the website and mobile app.",
+      "Collaborate with other teams, such as marketing, sales, and CRM, to receive requests and support to design features and landing pages.",
+      "Using a heat map, review and record user and departmental comments to help enhance the product.",
+      "Manage tasks, support team members, and estimate the time required to deliver designs on time."
+    ]
+  },
+  {
+    title: "Lead designer",
+    company: "CYHOME",
+    description: "Residential property management platforms",
+    period: "05/2019 - 10/2023",
+    responsibilities: [
+      "Redesign a resident and PMS (Property Management System) app completely new with a user-friendly interface that makes it simpler for everyone to use.",
+      "Support graphic designer to make digital banner, standee, flyer ... and print marketing & sales materials.",
+      "Mentor 1 designer entering the field and lead 1 graphic designer."
+    ]
+  },
+  {
+    title: "UI/UX designer",
+    company: "Saigontechnology",
+    description: "Outsourcing",
+    period: "03/2018 - 05/2019",
+    responsibilities: [
+      "Work with another team like technician, PM, mobile team... to define a solution to solve client's problem with different business like: Loyalty app, health app, bitcoin,...and learning a new technical like AR...",
+      "Design the user-friendly UI with mockups and prototype."
+    ]
+  },
+  {
+    title: "UI/UX designer",
+    company: "EZSOLUTION",
+    description: "Sales management software company",
+    period: "05/2016 - 01/2018",
+    responsibilities: []
+  },
+  {
+    title: "Graphic designer",
+    company: "ZINGMP3 & ZINGTV",
+    description: "Vietnam's leading online music website & film",
+    period: "10/2015 - 04/2016",
+    responsibilities: []
+  }
+];
+
+function AboutPage() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+      offset: 120,
+      easing: "ease-in-out",
+      once: false,
+      mirror: false
+    });
+  
+    AOS.refresh(); // Cập nhật AOS khi có thay đổi
+    console.log("AOS initialized");
+  }, []);
+  
 
   return (
-    <div className="flex overflow-hidden flex-col items-center px-20 pt-12 pb-28 bg-gray-200 max-md:px-5 max-md:pb-24">
-      <div className="flex flex-col max-w-full w-[943px]">
-        <div className="flex flex-wrap gap-5 justify-between w-full text-2xl text-black max-md:max-w-full">
-          <div className="flex gap-2 items-center whitespace-nowrap">
-            <div className="self-stretch my-auto">Linh</div>
-            <div className="flex shrink-0 self-stretch my-auto h-0.5 bg-neutral-900 w-[27px]" />
-            <div className="self-stretch my-auto">Quach</div>
-          </div>
-          <div 
-            className="text-black cursor-pointer" 
-            onClick={() => navigate("/home")}>
-            Home
-          </div>
-        </div>
-        <div className="flex flex-col items-center mt-32 w-full max-md:mt-10 max-md:max-w-full">
-          <SectionHeader
+    <div className="flex overflow-visible flex-col items-center px-20 pt-12 pb-28 bg-[#EEEDEA] max-md:px-5 max-md:pb-24">
+      <div className="flex flex-col max-w-full w-[945px]">
+        <Header data-aos="fade-down" />
+
+        <div data-aos="fade-down" className="flex flex-col items-center mt-32 w-full max-md:mt-10 max-md:mr-0.5 max-md:max-w-full">
+          <InfoSection
             title="Hello."
             content="I'm Linh, I've been working as a product designer for 8 years. My focus is on creating designs that are simple to use and easy to understand. I'm passionate about learning and improving user experiences for people."
+            isFirst={true}
+            
           />
-          <Divider />
-          <SectionHeader
+
+          <Divider data-aos="fade-down" />
+
+          <InfoSection
             title="How can I help"
             content="With my experience, I'm happy to help turn your idea into a design. I also work closely with other teams to find the best solutions to support your business growth."
+            data-aos="fade-down"
           />
-          <Divider />
-          <div className="mt-24 w-full max-md:mt-10">
-            <div className="flex gap-5 max-md:flex-col">
-                <div className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
-                <div className="text-5xl font-medium leading-tight text-black max-md:mt-10 max-md:text-4xl">
-                    Experiences
-                </div>
-                </div>
-                <ExperienceList />
-            </div>
+
+          <Divider data-aos="fade-down" />
+
+          <div data-aos="fade-down">
+            <ExperienceSection
+              title="Experiences"
+              experiences={experiences.map((exp, index) => (
+                <ExperienceItem key={index} {...exp} isLast={index === experiences.length - 1} data-aos="fade-down" />
+              ))}
+            />
           </div>
-          <Divider />
-          <SkillsAndTools
-            title="Skills"
-            content="UI design • Attention to detail • Problem-solving • Adaptability • Critical thinking • Teamwork • Communication"
-          />
-          <Divider />
-          <SkillsAndTools
-            title="Tools"
-            content="Figma • Sketch App • Photoshop • Illustrator • Prototype"
-          />
-        </div>
-        <Divider />
-        <div className="flex flex-wrap gap-3 items-center self-center mt-24 text-4xl font-semibold leading-tight text-black uppercase max-md:mt-10 max-md:max-w-full">
-          <div className="self-stretch my-auto max-md:max-w-full">
-            Thank you for scrolling here
+
+
+          <Divider data-aos="fade-down" />
+
+          <div data-aos="fade-down">
+            <InfoSection
+              title="Skills"
+              content={
+                <ul className="flex flex-wrap gap-x-3 gap-y-1 text-2xl leading-[38px]">
+                  <li>• UI design</li>
+                  <li>• Attention to detail</li>
+                  <li>• Problem-solving</li>
+                  <li>• Adaptability</li>
+                  <li>• Critical thinking</li>
+                  <li>• Teamwork</li>
+                  <li>• Communication</li>
+                </ul>
+              }
+            />
           </div>
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/fa7be8521ed845ef036c8fe2e3f8bd0a421ecdce9202699e9193991f6efac330?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&"
-            className="object-contain shrink-0 self-stretch my-auto w-8 aspect-square"
-            alt=""
-          />
-        </div>
-        <div className="self-center mt-8 text-3xl leading-tight text-center text-black max-md:max-w-full">
-          {"Let's work together or just have a chat."}
-        </div>
-        <div className="flex flex-wrap justify-between items-center mt-32 text-xl font-semibold tracking-wider leading-snug text-black whitespace-nowrap max-md:mt-10">
-          <div className="flex-1 shrink self-stretch my-auto uppercase basis-0">
-            Behance
+
+
+          <Divider data-aos="fade-down" />
+
+          <div data-aos="fade-down">
+            <InfoSection
+              title="Tools"
+              content={
+                <ul className="flex flex-wrap gap-x-3 gap-y-1 text-2xl leading-[38px]">
+                  <li>• Figma</li>
+                  <li>• Sketch App</li>
+                  <li>• Photoshop</li>
+                  <li>• Illustrator</li>
+                  <li>• Prototype</li>
+                </ul>
+              }/>
           </div>
-          <div className="self-stretch my-auto">qtuyetlinh@gmail.com</div>
-          <div className="flex-1 shrink self-stretch my-auto text-right uppercase basis-0">
-            linkedin
-          </div>
         </div>
+
+        <Divider data-aos="fade-down" />
+        <div data-aos="fade-down" className="flex flex-col items-center w-full">
+          <Footer />
+        </div>
+
+
       </div>
     </div>
   );
 }
 
-export default AboutMe;
+export default AboutPage;
