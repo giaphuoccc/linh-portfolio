@@ -4,6 +4,7 @@ import './index.css';
 
 import Home from "./component/Home/homePage";
 import About from "./component/About/aboutPage";
+import Detail from "./component/Details/detailPage";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,6 +28,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About/>} />
+            <Route path="/detail" element={<Detail />} />
           </Routes>
         </div>
       )}
