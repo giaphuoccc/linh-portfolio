@@ -1,7 +1,7 @@
 function DesignEnhancement() {
   return (
-    <>
-      {/* Title */}
+    <div className="mx-auto w-full max-w-[940px]">
+      {/* Giữ nguyên tiêu đề */}
       <div className="text-xl font-semibold leading-snug text-center text-[#A9A9A9] uppercase max-md:mt-10">
         4. Design enhancement
       </div>
@@ -9,11 +9,11 @@ function DesignEnhancement() {
         Challenge: Release new feature
       </div>
 
-      {/* Content Grid */}
-      <div className="flex flex-col mt-16 max-w-full text-black w-[940px] max-md:mt-10">
+      {/* Nội dung được thụt vào đúng vị trí của KeyChallenges */}
+      <div className="mt-16 w-full text-black max-md:mt-10">
         {/* Tracking */}
         <div className="grid grid-cols-[200px_1fr] gap-5">
-          <h2 className="text-3xl font-semibold leading-tight">Tracking</h2>
+          <h2 className="text-3xl font-semibold leading-tight text-left">Tracking</h2>
           <p className="text-xl leading-7">
             After 4 days release, we received 86 orders, but only one of them was successful.
             So, we started to find what happened?
@@ -22,7 +22,7 @@ function DesignEnhancement() {
 
         {/* So, what happened? */}
         <div className="grid grid-cols-[200px_1fr] gap-5 mt-16">
-          <h2 className="text-3xl font-semibold leading-tight">So, what happened?</h2>
+          <h2 className="text-3xl font-semibold leading-tight text-left">So, what happened?</h2>
           <div className="text-xl leading-7">
             {`User don't know `}<b>{`"What is a valid prescription?"`}</b>
             <br />
@@ -34,7 +34,7 @@ function DesignEnhancement() {
 
         {/* What we do? */}
         <div className="grid grid-cols-[200px_1fr] gap-5 mt-16">
-          <h2 className="text-3xl font-semibold leading-tight">What we do?</h2>
+          <h2 className="text-3xl font-semibold leading-tight text-left">What we do?</h2>
           <p className="text-xl leading-7">
             We decided to make a new guide with pictures to make it easier to understand and more interesting.
             Users MUST read the guide before using it.
@@ -49,7 +49,7 @@ function DesignEnhancement() {
         alt="New guide with pictures"
         className="object-contain self-stretch mt-24 w-full rounded-3xl aspect-[1.86] max-md:mt-10 max-md:max-w-full"
       />
-    </>
+    </div>
   );
 }
 

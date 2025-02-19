@@ -42,7 +42,7 @@ function DetailPage() {
 
         {/* Key Challenges */}
         <div data-aos="fade-down">
-          <KeyChallenges />
+        <KeyChallenges />
         </div>
 
         <div className="flex my-20 w-full bg-[#F5F5F5] min-h-[2px] max-md:my-5" />
@@ -64,10 +64,10 @@ function DetailPage() {
           <LessonsLearned />
         </div>
 
-{/* Up Next */}
-<div className="!w-[932px]" data-aos="fade-down">
-  <UpNext />
-</div>
+        {/* Up Next */}
+        <div data-aos="fade-down">
+          <UpNext />
+        </div>
 
 
 

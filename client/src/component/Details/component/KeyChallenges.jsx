@@ -1,10 +1,10 @@
 function KeyChallenges() {
   return (
-    <div className="max-w-[900px] mx-auto text-left">
+    <div className="max-w-[941px] mx-auto text-left">
       <div className="text-xl font-semibold leading-snug text-center text-[#A9A9A9] uppercase max-md:mt-10">
         2. Key challenges
       </div>
-      <div className="mt-2 ml-3 text-5xl font-medium leading-tight text-center text-black max-md:max-w-full max-md:text-4xl">
+      <div className="mt-3 ml-3 text-5xl font-medium leading-tight text-center text-black max-md:max-w-full max-md:text-4xl">
         Buy prescription drugs
       </div>
       {/* For user */}
