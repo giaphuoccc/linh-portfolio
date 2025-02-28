@@ -1,33 +1,28 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { AuthContext } from "../context/authContext";
+import { Navigate } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import './index.css';
 
-import LoginPage from "./component/Login/LoginPage";
+import Dashboard from "./component/Dashboard/Dashboard.jsx";
+import LoginPage from "./component/Login/LoginPage.jsx";
+
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-    return () => clearTimeout(timer);
-  }, []);
+    console.log("AuthContext user:", user);
+  }, [user]);
 
   return (
     <Router>
-      {isLoading ? (
-        <div className="flex items-center justify-center h-screen bg-black">
-          <div className="fade-loader"></div>
-        </div>
-      ) : (
-        <div className="fade-in">
-          <Routes>
-            <Route path="/" element={<LoginPage />} />
-            <Route path="/login" element={<LoginPage/>} />
-          </Routes>
-        </div>
-      )}
+      <ToastContainer /> {/* 🔥 Đảm bảo toast luôn hiển thị */}
+      <Routes>
+        <Route path="/" element={user ? <Navigate to="/dashboard" /> : <LoginPage />} />
+        <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/" />} />
+      </Routes>
     </Router>
   );
 };
