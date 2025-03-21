@@ -19,11 +19,11 @@ const Footer = () => {
       </div>
       <div className="flex flex-wrap justify-between items-center mt-32 max-w-full text-xl font-semibold tracking-wider leading-snug whitespace-nowrap w-[940px] max-md:mt-10 text-[#D9C4A9]">
         <div className="flex-1 shrink self-stretch my-auto uppercase basis-0">
-          Behance
+          <a href="https://t.me/linhquach20" target="_blank" rel="noopener noreferrer">Telegram</a>
         </div>
         <div className="self-stretch my-auto">qtuyetlinh@gmail.com</div>
         <div className="flex-1 shrink self-stretch my-auto text-right uppercase basis-0">
-          linkedin
+          <a href="https://www.linkedin.com/in/linh-quach-37624012b" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
       </div>
     </>

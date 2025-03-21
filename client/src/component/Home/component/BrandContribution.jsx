@@ -35,7 +35,7 @@ const BrandContributions = () => {
         ))}
         <div className="flex flex-col self-stretch my-auto rounded-none w-[183px]">
           <div className="flex flex-col bg-white rounded-md">
-            <div className="flex flex-col justify-center px-px py-3 rounded-md bg-blend-color bg-stone-800 bg-white">
+            <div className="flex flex-col justify-center px-px py-3 rounded-md bg-blend-color bg-white">
               <img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/7c2ed7f80d524164ad68b115d698a5d6e692cb911f5162831da322759c5a4749?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&"
@@ -55,7 +55,7 @@ const BrandContributions = () => {
         ))}
         <div className="flex flex-col self-stretch my-auto rounded-md w-[209px]">
           <div className="flex flex-col bg-white rounded-md">
-            <div className="flex flex-col justify-center p-2.5 bg-white rounded-md bg-blend-color bg-stone-800">
+            <div className="flex flex-col justify-center p-2.5 bg-white rounded-md bg-blend-color">
               <img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/bd7b4ec531389a25f3d995cc535ce99993ec79fe66a1c1485692ae27598fae70?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&"

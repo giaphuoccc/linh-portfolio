@@ -1,21 +1,17 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom"; // Import Link from React Router
 
 const Header = () => {
-  const navigate = useNavigate();
-
   return (
     <div className="flex flex-wrap gap-5 justify-between max-w-full text-2xl text-black w-[943px]">
       <div className="flex gap-2 items-center whitespace-nowrap ">
-        <div className="self-stretch my-auto text-[#D9C4A9]">Linh</div>
-        <div className="flex shrink-0 self-stretch my-auto h-0.5 bg-[#D9C4A9] w-[20px]" />
-        <div className="self-stretch my-auto text-[#D9C4A9]">Quach</div>
+        {/* Make "Linh" and "Quach" clickable with Link */}
+        <Link to="/" className="self-stretch my-auto text-[#D9C4A9]">Linh Quach</Link>
       </div>
       
-      <div 
-        className="text-[#D9C4A9] cursor-pointer" 
-        onClick={() => navigate("/about")}>
+      {/* Use Link to navigate to About me */}
+      <Link to="/about" className="text-[#D9C4A9]">
         About me
-      </div>
+      </Link>
     </div>
   );
 };

@@ -1,31 +1,52 @@
 import { useEffect } from "react";
+//import { useState } from "react";
+//import axios from "axios";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 import Header from './component/Header.jsx';
 import ProjectCard from './component/ProjectCard.jsx';
 import BrandContributions from './component/BrandContribution.jsx';
-import RecentProjects from './component/RecentProjects.jsx';
 import Introduction from './component/Introduction.jsx';
 import Footer from './component/Footer.jsx';
 
+// Hàm để tách phần chữ và phần hình ảnh trong content
+// const parseContent = (htmlContent) => {
+//     // Tạo một DOMParser để phân tích HTML
+//     const parser = new DOMParser();
+//     const doc = parser.parseFromString(htmlContent, "text/html");
+
+//     // Tìm phần chữ trong <p> trước <img>
+//     const text = doc.querySelector("p") ? doc.querySelector("p").textContent.trim() : '';  // Chỉ lấy phần text của <p>
+
+//     // Tìm phần hình ảnh từ thẻ <img>
+//     const imageSrc = doc.querySelector("img") ? doc.querySelector("img").src : '';  // Lấy src của ảnh từ thẻ <img>
+
+//     return { text, imageSrc };
+// };
+
 const Portfolio = () => {
+  //const [projects, setProjects] = useState([]); // State lưu danh sách bài viết
+
   useEffect(() => {
     AOS.init({
-      duration: 1200,  // 🔥 Hiệu ứng chạy trong 1200ms
-      offset: 120,     // 🔥 Hiệu ứng kích hoạt khi phần tử cách 120px từ đáy viewport
+      duration: 1200,
+      offset: 120,
       easing: "ease-in-out",
-      once: false,     // 🔥 Cho phép hiệu ứng chạy lại khi cuộn lên/xuống
-      mirror: false,   // 🔥 Tránh hiệu ứng bị giật khi scroll ngược lên
+      once: false,
+      mirror: false,
     });
-  
-    AOS.refresh(); // 🔥 Đảm bảo AOS cập nhật khi DOM thay đổi
+
+    AOS.refresh();
+
+    // Fetch bài đăng từ backend, chỉ lấy category "Home"
+    //fetchProjects();
   }, []);
 
   const mainProjects = [
-    { imageSrc: "https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/318da8905dcc088fa15065db51d2ff4b9221e3f03a50e1f74273b1c6d256d486?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&", title: "Pharmacity", category: "Landing page", iconSrc: "https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/7ba013f64d390806c165c86785fce5900357a09f2b70e501f351d3dd80c046f7?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&" },
-    { imageSrc: "https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/318da8905dcc088fa15065db51d2ff4b9221e3f03a50e1f74273b1c6d256d486?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&", title: "Pharmacity", category: "Landing page", iconSrc: "https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/0404193747db913381f0cc842754092042d98933593f7a2754183fbecd6fd541?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&" },
-    { imageSrc: "https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/318da8905dcc088fa15065db51d2ff4b9221e3f03a50e1f74273b1c6d256d486?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&", title: "Pharmacity", category: "Landing page", iconSrc: "https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/25fd667b634f9ac91d3bcacd43da27fd94ac1fb7da987e2bcb5a6fcc375d7bea?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&" },
+    { imageSrc: "https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/622b0d96e41114a8bc54b3703d70978bc60d271e?placeholderIfAbsent=true",id: "ecomerchant", title: "ECO-Merchant", category: "Landing page", iconSrc: "https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/0404193747db913381f0cc842754092042d98933593f7a2754183fbecd6fd541?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&" },
+    { imageSrc: "https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/42607ce92d217662a51c327c06c280fa082c8362?placeholderIfAbsent=true",id: "pharmacity", title: "Pharmacity", category: "Landing page", iconSrc: "https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/0404193747db913381f0cc842754092042d98933593f7a2754183fbecd6fd541?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&" },
+    { imageSrc: "https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/ad2a626ee129c8ba9de17e3294ec1be8cb554ae5?placeholderIfAbsent=true",id: "cyhome", title: "Cyhome", category: "Landing page", iconSrc: "https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/25fd667b634f9ac91d3bcacd43da27fd94ac1fb7da987e2bcb5a6fcc375d7bea?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&" },
   ];
 
   return (
@@ -53,9 +74,6 @@ const Portfolio = () => {
             </div>
           ))}
 
-          <div data-aos="fade-down">
-            <RecentProjects />
-          </div>
         </div>
 
         {/* Đường kẻ vàng */}

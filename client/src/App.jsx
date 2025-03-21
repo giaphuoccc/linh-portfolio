@@ -1,10 +1,13 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
-import './index.css';
+import "./index.css";
 
 import Home from "./component/Home/homePage";
 import About from "./component/About/aboutPage";
-import Detail from "./component/Details/detailPage";
+import ProjectDetail from "./component/Home/projectDetail";
+// import Cyhome from "./component/Details/Cyhome/CyhomeProject";
+// import Pharmacity from "./component/Details/Pharmacity/PharmaProject";
+// import ECOMerchant from "./component/Details/ECO/ECOProject";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,8 +30,11 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
-            <Route path="/about" element={<About/>} />
-            <Route path="/detail" element={<Detail />} />
+            <Route path="/about" element={<About />} />
+            {/* <Route path="/cyhome" element={<Cyhome />} />
+            <Route path="/pharmacity" element={<Pharmacity />} />
+            <Route path="/eco-merchant" element={<ECOMerchant />} /> */}
+            <Route path="/project/:id" element={<ProjectDetail />} />
           </Routes>
         </div>
       )}

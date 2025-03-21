@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
+@import "tailwindcss/preflight";  /* Replaces @tailwind base */
+@import "tailwindcss/utilities";  /* Replaces @tailwind components & utilities */
 @import "tailwindcss";
 
 :root {

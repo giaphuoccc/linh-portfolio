@@ -8,17 +8,25 @@ import KeyChallenges from "./component/KeyChallenges.jsx";
 import ProcessSection from "./component/ProcessSection.jsx";
 import DesignEnhancement from "./component/DesignEnhancement.jsx";
 import LessonsLearned from "./component/LessonLearned.jsx";
-import UpNext from "./component/UpNext";
-import Footer from "./component/Footer";
+import Footer from "./component/Footer.jsx";
 
-function DetailPage() {
+const PharmaProject = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true }); // Hiệu ứng chạy trong 1s, chỉ chạy 1 lần
+    AOS.init({
+      duration: 1200,
+      offset: 120,
+      easing: "ease-in-out",
+      once: false, // Để animation chỉ chạy một lần
+      mirror: false,
+    });
+
+    AOS.refresh();
   }, []);
 
   return (
-    <div className="flex overflow-hidden flex-col items-center px-20 pt-12 pb-24 bg-white max-md:px-5">
+    <div className="flex overflow-hidden flex-col items-center px-48 pt-12 pb-24 bg-white max-md:px-5">
       <div className="flex flex-col items-center w-full max-w-[1060px] max-md:max-w-full">
+        
         {/* Header */}
         <div data-aos="fade-down">
           <Header />
@@ -30,21 +38,24 @@ function DetailPage() {
         </div>
 
         {/* Product Image */}
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/99c6ce03dc41cdb1725c256eedb378d46eda5480f487186bf955661e69891a31?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&"
-          alt="Pharmacity product overview"
-          className="object-contain mt-16 max-w-full rounded-2xl aspect-[1.75] w-[940px] max-md:mt-10"
-          data-aos="fade-down"
-        />
+        <div data-aos="fade-down">
+          <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/99c6ce03dc41cdb1725c256eedb378d46eda5480f487186bf955661e69891a31?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&"
+            alt="Pharmacity product overview"
+            className="object-contain mt-16 max-w-full rounded-2xl aspect-[1.75] w-[940px] max-md:mt-10"
+          />
+        </div>
 
+        {/* Divider */}
         <div className="flex my-20 w-full bg-[#F5F5F5] min-h-[2px] max-md:my-5" />
 
         {/* Key Challenges */}
         <div data-aos="fade-down">
-        <KeyChallenges />
+          <KeyChallenges />
         </div>
 
+        {/* Divider */}
         <div className="flex my-20 w-full bg-[#F5F5F5] min-h-[2px] max-md:my-5" />
 
         {/* Process Section */}
@@ -52,6 +63,7 @@ function DetailPage() {
           <ProcessSection />
         </div>
 
+        {/* Divider */}
         <div className="flex my-20 w-full bg-[#F5F5F5] min-h-[2px] max-md:my-5" />
 
         {/* Design Enhancement */}
@@ -64,17 +76,7 @@ function DetailPage() {
           <LessonsLearned />
         </div>
 
-        {/* Up Next */}
-        <div data-aos="fade-down">
-          <UpNext />
-        </div>
-
-
-
-
-
-
-
+        {/* Divider */}
         <div className="flex my-20 w-full bg-[#F5F5F5] min-h-[2px] max-md:my-5" />
 
         {/* Footer */}
@@ -86,4 +88,4 @@ function DetailPage() {
   );
 }
 
-export default DetailPage;
+export default PharmaProject;
