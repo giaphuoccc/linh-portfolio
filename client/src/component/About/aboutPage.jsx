@@ -156,6 +156,7 @@ function AboutPage() {
         </div>
 
         <Divider data-aos="fade-down" />
+        
         <div data-aos="fade-down" className="flex flex-col items-center w-full">
           <Footer />
         </div>
