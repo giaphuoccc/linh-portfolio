@@ -7,20 +7,20 @@ const DesignSection = () => {
       <h3 className="mx-0 my-10 text-5xl font-medium text-center leading-tight text-black max-sm:text-4xl">
         Resident app design screens
       </h3>
-      <div className="space-y-10">
+      <div className="grid grid-cols-1 gap-10">
         <img
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/8ad88e6e2a57f25d273bab92ab0cd466d2d5b672"
-          className="w-full rounded-3xl aspect-[1.86]"
+          className="w-full max-w-[945px] h-[1105px] mx-auto rounded-3xl object-center"
           alt="Resident App Screens 1"
         />
         <img
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/35cff5e2d5d1a0e36242ddcb4ce5569cf95f8a64"
-          className="w-full rounded-3xl aspect-[1.86]"
+          className="w-full max-w-[945px] h-[1105px] mx-auto rounded-3xl object-center"
           alt="Resident App Screens 2"
         />
         <img
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/09301587a03ac81387d22af5beb5e17af52bc563"
-          className="w-full rounded-3xl aspect-[1.86]"
+          className="w-full max-w-[945px] h-[1105px] mx-auto rounded-3xl object-center"
           alt="Resident App Screens 3"
         />
       </div>
