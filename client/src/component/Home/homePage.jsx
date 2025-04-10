@@ -62,6 +62,16 @@ const Portfolio = () => {
           data-aos="fade-down"
         />
 
+        <div data-aos="fade-down">
+          <BrandContributions />
+        </div>
+        
+        {/* Đường kẻ vàng */}
+        <div className="flex shrink-0 mt-24 h-0.5 w-full max-w-[940px] mx-auto px-20 max-md:px-5 max-md:mt-10 
+          bg-[linear-gradient(to_right,rgb(36,34,32),rgb(105,95,80),rgb(36,34,32))]"
+          data-aos="fade-down"
+        />
+
         <div className="flex flex-col mt-24 w-full max-w-[940px] max-md:mt-10 max-md:max-w-full">
           <h2 className="text-5xl font-medium leading-[62px] w-[337px] max-md:text-4xl max-md:leading-[58px] gradient-gold"
               data-aos="fade-down">
@@ -76,15 +86,7 @@ const Portfolio = () => {
 
         </div>
 
-        {/* Đường kẻ vàng */}
-        <div className="flex shrink-0 mt-24 h-0.5 w-full max-w-[940px] mx-auto px-20 max-md:px-5 max-md:mt-10 
-          bg-[linear-gradient(to_right,rgb(36,34,32),rgb(105,95,80),rgb(36,34,32))]"
-          data-aos="fade-down"
-        />
 
-        <div data-aos="fade-down">
-          <BrandContributions />
-        </div>
       </div>
       
       <div data-aos="fade-down" className="flex flex-col items-center w-full">

@@ -33,18 +33,6 @@ const BrandContributions = () => {
         {uiUxBrands.map((brand, index) => (
           <img key={index} loading="lazy" src={brand.src} alt={brand.alt} className={brand.className} />
         ))}
-        <div className="flex flex-col self-stretch my-auto rounded-none w-[183px]">
-          <div className="flex flex-col bg-white rounded-md">
-            <div className="flex flex-col justify-center px-px py-3 rounded-md bg-blend-color bg-white">
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/7c2ed7f80d524164ad68b115d698a5d6e692cb911f5162831da322759c5a4749?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&"
-                alt="Brand logo"
-                className="object-contain aspect-[5.99] w-[180px]"
-              />
-            </div>
-          </div>
-        </div>
       </div>
       <h3 className="mt-16 text-4xl font-medium leading-tight max-md:mt-10 text-[#D9C4A9]">
         Graphic design
@@ -53,18 +41,6 @@ const BrandContributions = () => {
         {graphicDesignBrands.map((brand, index) => (
           <img key={index} loading="lazy" src={brand.src} alt={brand.alt} className={brand.className} />
         ))}
-        <div className="flex flex-col self-stretch my-auto rounded-md w-[209px]">
-          <div className="flex flex-col bg-white rounded-md">
-            <div className="flex flex-col justify-center p-2.5 bg-white rounded-md bg-blend-color">
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/bd7b4ec531389a25f3d995cc535ce99993ec79fe66a1c1485692ae27598fae70?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&"
-                alt="Brand logo"
-                className="object-contain rounded-md aspect-[5.78] w-[191px]"
-              />
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
