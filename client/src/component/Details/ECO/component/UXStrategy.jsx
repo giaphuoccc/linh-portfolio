@@ -3,7 +3,7 @@ const UXStrategy = () => (
 
     {/* ----------  TOP HEADER  ---------- */}
     <div className="text-center max-w-3xl mx-auto">
-      <p className="uppercase tracking-widest text-xl font-medium text-gray-500 mb-2">
+      <p className="uppercase text-xl font-medium text-gray-500">
         4. Design
       </p>
 

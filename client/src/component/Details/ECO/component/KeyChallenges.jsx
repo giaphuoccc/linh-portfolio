@@ -84,12 +84,21 @@ const KeyChallenges = () => {
           market for several years.
         </p>
 
-        {/* bảng so sánh – cập nhật đường dẫn ảnh nếu cần */}
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/900f52382bab3724acbef73a12d4f475926e2ac7?placeholderIfAbsent=true"
-          alt="Competitor feature comparison table"
-          className="w-full max-w-[640px] rounded-[16px] shadow"
-        />
+        {/* bảng so sánh */}
+        <div className="flex gap-4">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/900f52382bab3724acbef73a12d4f475926e2ac7?placeholderIfAbsent=true"
+            alt="Competitor feature comparison table"
+            className="w-full max-w-[480px] rounded-[16px] shadow"
+          />
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/89f4a036a7f88601e0f1c0e18007e64414b06e0a?placeholderIfAbsent=true"    /* thay thành đường dẫn ảnh bạn muốn thêm */
+            alt="Additional competitor flow"
+            className="w-full max-w-[480px] rounded-[16px] shadow"
+          />
+        </div>
+
+        
 
         <div className="grid md:grid-cols-[250px_1fr] gap-8 w-full max-w-4xl text-neutral-900 text-[20px] leading-7">
           <h4 className="font-semibold text-[28px]">
