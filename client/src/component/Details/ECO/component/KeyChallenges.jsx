@@ -1,22 +1,34 @@
 /* src/component/KeyChallenges.jsx */
 const KeyChallenges = () => {
   return (
-    <section className="flex flex-col gap-10 items-center">
+    <section
+      className="flex flex-col gap-10 items-center [font-family:'Inter_Display',sans-serif]"
+    >
       {/* ---------- TITLE ---------- */}
-      <h2 className="text-xl font-semibold uppercase text-neutral-400">
+      <h2 className="          
+        text-[20px]          /* 20px */
+        font-medium
+        uppercase
+        text-neutral-400"
+      >
         3. Key Challenges
       </h2>
-      <h3 className="text-5xl font-medium leading-[62.4px] text-neutral-900 max-md:text-4xl max-sm:text-3xl">
+      <h3 className="        
+        text-[40px]         /* 40px */
+        font-semibold
+        text-neutral-900
+        text-center"
+      >
         The issues
       </h3>
 
       {/* ---------- INTRO ---------- */}
       <div className="flex flex-col gap-16 w-full">
         <div className="flex justify-between max-md:flex-col max-md:gap-6">
-          <h4 className="text-3xl font-semibold leading-9 text-neutral-900">
-            The issues we noticed
+          <h4 className="text-[28px] font-semibold leading-9 text-neutral-900">
+            The issues we <br/> noticed
           </h4>
-          <p className="text-xl leading-7 max-w-[619px] text-neutral-900">
+          <p className="text-[20px] leading-7 max-w-[619px] text-neutral-900">
             Coming up with a lot of issues in the previous version which have an
             {" out-of-date UI, a UX not smooth and many problems that couldn't keep "}
             up with trends for a long time. Especially, thousands of people are
@@ -26,10 +38,10 @@ const KeyChallenges = () => {
         </div>
 
         <div className="flex justify-between max-md:flex-col max-md:gap-6">
-          <h4 className="text-3xl font-semibold leading-9 text-neutral-900">
+          <h4 className="text-[28px] font-semibold leading-9 text-neutral-900">
             Solutions
           </h4>
-          <p className="text-xl leading-7 max-w-[619px] text-neutral-900">
+          <p className="text-[20px] leading-7 max-w-[619px] text-neutral-900">
             So we decided to redesign with every careful step to ensure that the
             new app can partly bring more convenience to users, contributing to
             higher revenue for the company.
@@ -45,72 +57,28 @@ const KeyChallenges = () => {
       />
 
       {/* ---------- USER PERSONA ---------- */}
-      <div
-        className="grid gap-8 mt-16 md:grid-cols-[420px_1fr] max-md:flex max-md:flex-col"
-      >
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/d93bee9afe35fb4652be46eed348555b3fdbf412"
-          alt="User persona visualization"
-          className="w-[420px] h-[455px] object-cover rounded-[16px]"
-        />
-
-        <div className="flex flex-col">
-          <h4 className="text-3xl font-semibold leading-9 text-neutral-900">
-            User persona
-          </h4>
-          <dl className="flex gap-5 mt-4">
-            <div className="text-xl leading-7 text-neutral-900">
-              <dt>Number of user:</dt>
-              <dt>Scope of survey:</dt>
-              <dt>Number of question:</dt>
-              <dt>Time:</dt>
-              <dt>Conduct survey:</dt>
-              <dt>My role:</dt>
-            </div>
-            <div className="text-xl leading-7 text-neutral-900">
-              <dd>1080</dd>
-              <dd>Nationwide</dd>
-              <dd>9</dd>
-              <dd>12-25/12/2022</dd>
-              <dd>Sales team</dd>
-              <dd>Organize and analyze the data</dd>
-            </div>
-          </dl>
-        </div>
-      </div>
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/676f8eb9e543e647dfb51aad427c3883f3e7b3a7?placeholderIfAbsent=true"
+        alt="Overview visualization"
+        className="w-full rounded-[16px] mt-[60px]"
+      />
 
       {/* ---------- USER SURVEY ---------- */}
-      <div
-        className="grid gap-8 mt-16 md:grid-cols-[420px_1fr] max-md:flex max-md:flex-col"
-      >
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/d8affa7dfa7f8409ea80136bf08b2778b9635ca3"
-          alt="User survey process"
-          className="w-[420px] h-[455px] object-cover rounded-[16px]"
-        />
-
-        <div className="flex flex-col">
-          <h4 className="text-3xl font-semibold leading-9 text-neutral-900">
-            User survey
-          </h4>
-          <p className="mt-4 text-xl leading-7 max-w-[460px] text-neutral-900">
-            The PO, I and another designer conducted qualitative research by
-            visiting merchants at their grocery stores, asking a number of
-            questions to understand their feedback of the app, strengths vs
-            limitations, enhancement ideas...
-          </p>
-        </div>
-      </div>
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/4d5cb90484986235aceb13a3a0136d354b02325a?placeholderIfAbsent=true"
+        alt="Secondary overview visualization"
+        className="w-full rounded-[16px] mt-[60px]"
+      />
 
       {/* ---------- COMPETITOR RESEARCH ---------- */}
-      <section
-        className="flex flex-col gap-10 items-center mt-16"
-      >
-        <h3 className="text-4xl font-medium leading-tight text-neutral-900">
+      <section className="flex flex-col gap-10 items-center mt-16">
+        <h3
+          className="text-[40px] font-semibold text-neutral-900 text-center"
+        >
           Competitor Research
         </h3>
 
-        <p className="text-center text-lg leading-7 max-w-xl text-neutral-900">
+        <p className="text-[20px] text-center leading-7 max-w-xl text-neutral-900">
           We’ve been focusing on researching our competitors in Vietnam,&nbsp;
           especially VinShop and Tello, two big players that have been in the
           market for several years.
@@ -123,24 +91,28 @@ const KeyChallenges = () => {
           className="w-full max-w-[640px] rounded-[16px] shadow"
         />
 
-        <div className="grid md:grid-cols-[250px_1fr] gap-8 w-full max-w-4xl text-neutral-900 text-base leading-7">
-          <h4 className="font-semibold text-[28px] w-[210px] break-words">How&nbsp;We Started</h4>
+        <div className="grid md:grid-cols-[250px_1fr] gap-8 w-full max-w-4xl text-neutral-900 text-[20px] leading-7">
+          <h4 className="font-semibold text-[28px]">
+            How&nbsp;We <br />Started
+          </h4>
           <p>
             We began by listing all the features that Finviet currently offers.
             Then, we looked at our two big competitors in Vietnam – VinShop and
             Tello – and listed all the features they have.
           </p>
 
-          <h4 className="font-semibold text-[28px] w-[210px] break-words">Comparing&nbsp;the&nbsp;Features</h4>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>What features they have that we don’t</li>
-            <li>
-              What features we both have, and whether ours are better, the same,
-              or need improvement
-            </li>
-          </ul>
+          <h4 className="font-semibold text-[28px]">
+            Comparing&nbsp;the <br />Features
+          </h4>
+          <p>
+            Next, we compared everything side by side:
+            <br />• What features they have that we don’t.
+            <br />• What features we both have, and whether ours are better, the same, or need improvement.
+          </p>
 
-          <h4 className="font-semibold text-[28px] w-[210px] break-words">Organizing&nbsp;the&nbsp;Results</h4>
+          <h4 className="font-semibold text-[28px]">
+            Organizing&nbsp;the <br />Results
+          </h4>
           <p>
             We put everything into two sheets:
             <br />• One for the full feature comparison
@@ -149,14 +121,18 @@ const KeyChallenges = () => {
             These were shared and discussed with different teams in the company.
           </p>
 
-          <h4 className="font-semibold text-[28px] w-[130px] break-words">The&nbsp;Big&nbsp;Question</h4>
+          <h4 className="font-semibold text-[28px]">
+            The&nbsp;Big <br />Question
+          </h4>
           <p>
             After looking at all the data, one important question came up:
             Should we follow our competitors and build the same features, or
             focus on what we do best and make it even better?
           </p>
 
-          <h4 className="font-semibold text-[28px] w-[130px] break-words">What&nbsp;We Decided</h4>
+          <h4 className="font-semibold text-[28px]">
+            What&nbsp;We <br />Decided
+          </h4>
           <p>
             After many meetings and team discussions, we came up with:
             <br />• A list of features we need to improve
@@ -176,10 +152,10 @@ const KeyChallenges = () => {
       {/* ---------- ANALYZE RESULTS ---------- */}
       <div className="flex flex-col gap-16 w-full">
         <div className="flex justify-between max-md:flex-col max-md:gap-6">
-          <h4 className="text-3xl font-semibold leading-9 text-neutral-900">
+          <h4 className="text-[28px] font-semibold leading-9 text-neutral-900">
             Analyze results
           </h4>
-          <p className="text-xl leading-7 max-w-[614px] text-neutral-900">
+          <p className="text-[20px] leading-7 max-w-[614px] text-neutral-900">
             After collecting all the data, we proceeded to design a new app. We
             sort features into categories: needs improvement, new features, and
             {" bugs. Then, we prioritized them. To keep up with time, we skipped "}
