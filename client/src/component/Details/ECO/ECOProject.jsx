@@ -5,10 +5,13 @@ import "aos/dist/aos.css";
 
 import ProjectTitle from "./component/ProjectHeader";
 import ProjectOverview from "./component/ProjectOverview";
+import RoleSection from "./component/RoleSection";
 import KeyChallenges from "./component/KeyChallenges";
+import UXStrategy from "./component/UXStrategy";
 import DesignProcess from "./component/DesignProcess";
 import Summary from "./component/Summary";
 import Footer from "./component/Footer"; // If you want to add a footer like in CyHome
+
 
 const EcoMerchantCaseStudy = () => {
   useEffect(() => {
@@ -41,8 +44,10 @@ const EcoMerchantCaseStudy = () => {
           <ProjectOverview />
         </div>
 
-        {/* Divider */}
-        <div className="flex my-20 w-full bg-[#F5F5F5] min-h-[2px] max-md:my-5" />
+        {/* Role Section */}
+        <div data-aos="fade-down">
+          <RoleSection />
+        </div>
 
         {/* Key Challenges */}
         <div data-aos="fade-down">
@@ -51,6 +56,10 @@ const EcoMerchantCaseStudy = () => {
 
         {/* Divider */}
         <div className="flex my-20 w-full bg-[#F5F5F5] min-h-[2px] max-md:my-5" />
+        
+        <div data-aos="fade-down">
+          <UXStrategy />
+        </div>
 
         {/* Design Process */}
         <div data-aos="fade-down">

@@ -55,16 +55,6 @@ const Portfolio = () => {
 
       <div className="flex flex-col mt-32 max-w-full w-[940px] max-md:mt-10">
         <Introduction data-aos="fade-down" />
-
-        {/* Đường kẻ vàng */}
-        <div className="flex shrink-0 mt-24 h-0.5 w-full max-w-[940px] mx-auto px-20 max-md:px-5 max-md:mt-10 
-          bg-[linear-gradient(to_right,rgb(36,34,32),rgb(105,95,80),rgb(36,34,32))]"
-          data-aos="fade-down"
-        />
-
-        <div data-aos="fade-down">
-          <BrandContributions />
-        </div>
         
         {/* Đường kẻ vàng */}
         <div className="flex shrink-0 mt-24 h-0.5 w-full max-w-[940px] mx-auto px-20 max-md:px-5 max-md:mt-10 
@@ -83,6 +73,16 @@ const Portfolio = () => {
               <ProjectCard {...project} />
             </div>
           ))}
+
+        {/* Đường kẻ vàng */}
+        <div className="flex shrink-0 mt-24 h-0.5 w-full max-w-[940px] mx-auto px-20 max-md:px-5 max-md:mt-10 
+          bg-[linear-gradient(to_right,rgb(36,34,32),rgb(105,95,80),rgb(36,34,32))]"
+          data-aos="fade-down"
+        />
+
+        <div data-aos="fade-down">
+          <BrandContributions />
+        </div>
 
         </div>
 

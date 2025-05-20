@@ -1,9 +1,6 @@
 const DesignProcess = () => {
   return (
     <section className="flex flex-col mt-24 w-full text-center rounded-2xl max-md:mt-10 max-w-[940px] mx-auto">
-      <h2 className="self-center text-xl font-semibold leading-snug uppercase text-neutral-400">
-        3. Design
-      </h2>
       <h3 className="self-center mt-3 text-5xl font-medium leading-tight text-neutral-900 max-md:text-4xl">
         Redesign Process
       </h3>
