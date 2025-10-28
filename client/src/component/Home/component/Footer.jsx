@@ -1,33 +1,58 @@
-const Footer = () => {
+export default function Footer() {
   return (
-    <>
-      <div className="flex shrink-0 mt-24 h-0.5 w-full max-w-[940px] mx-auto px-20 max-md:px-5 max-md:mt-10 
-            bg-[linear-gradient(to_right,rgb(36,34,32),rgb(105,95,80),rgb(36,34,32))]"/>
-      <div className="flex flex-wrap gap-3 items-center mt-24 text-4xl font-semibold leading-tight uppercase max-md:mt-10 max-md:max-w-full">
-        <div className="self-stretch my-auto max-md:max-w-full gradient-gold">
-          Thank you for scrolling here
-        </div>
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/4f495b6d81d24533a0f9f7f4a35d3038/a696ff6ff7196186d929a077d5dd4bf38b29b1748906ea8fdb1620124b0f6bb7?apiKey=4f495b6d81d24533a0f9f7f4a35d3038&"
-          alt=""
-          className="object-contain shrink-0 self-stretch my-auto w-8 aspect-square"
-        />
+    <footer className="relative w-full h-auto min-h-[700px] bg-[#FEBC11] overflow-hidden">
+      {/* Striped background pattern */}
+      <div className="absolute inset-0 flex">
+        {Array.from({ length: 10 }).map((_, i) => (
+          <div 
+            key={i}
+            className="flex-1 bg-gradient-to-r from-[rgba(255,209,90,0.6)] to-[rgba(255,200,57,0.6)]"
+          />
+        ))}
       </div>
-      <div className="mt-8 text-3xl leading-tight text-center max-md:max-w-full text-[#D9C4A9]">
-        {"Let's work together or just have a chat."}
-      </div>
-      <div className="flex flex-wrap justify-between items-center mt-32 max-w-full text-xl font-semibold tracking-wider leading-snug whitespace-nowrap w-[940px] max-md:mt-10 text-[#D9C4A9]">
-        <div className="flex-1 shrink self-stretch my-auto uppercase basis-0">
-          <a href="https://t.me/linhquach20" target="_blank" rel="noopener noreferrer">Telegram</a>
-        </div>
-        <div className="self-stretch my-auto">qtuyetlinh@gmail.com</div>
-        <div className="flex-1 shrink self-stretch my-auto text-right uppercase basis-0">
-          <a href="https://www.linkedin.com/in/linh-quach-37624012b" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </div>
-      </div>
-    </>
-  );
-};
 
-export default Footer;
+      {/* Grid lines decoration */}
+      <div className="absolute inset-0 pointer-events-none">
+        <svg className="w-full h-full" viewBox="0 0 1440 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1369 0V700" stroke="white" strokeOpacity="0.564706"/>
+          <path d="M70 0V700" stroke="white" strokeOpacity="0.564706"/>
+          <path d="M1440 540H0" stroke="white" strokeOpacity="0.564706"/>
+          <path d="M1440 161H0" stroke="white" strokeOpacity="0.564706"/>
+          <rect width="16" height="16" transform="matrix(-1 0 0 1 1377 532)" fill="white"/>
+          <rect x="-0.5" y="0.5" width="15" height="15" transform="matrix(-1 0 0 1 1376 532)" stroke="white" strokeOpacity="0.564706"/>
+          <rect width="16" height="16" transform="matrix(-1 0 0 1 78 153)" fill="white"/>
+          <rect x="-0.5" y="0.5" width="15" height="15" transform="matrix(-1 0 0 1 77 153)" stroke="white" strokeOpacity="0.564706"/>
+        </svg>
+      </div>
+
+      {/* Content */}
+      <div className="relative max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20 py-12 md:py-20 lg:py-24">
+        {/* Contact info */}
+        <div className="space-y-3 mb-12 md:mb-20">
+          <p className="text-portfolio-brown font-bricolage text-xl md:text-[32px] font-normal leading-normal">
+            {"Drop me an email or a text and I'll get right back to you..."}
+          </p>
+          <a 
+            href="mailto:qtuyetlinh@gmail.com"
+            className="block text-portfolio-brown font-bricolage text-xl md:text-[32px] font-normal leading-normal hover:underline"
+          >
+            qtuyetlinh@gmail.com
+          </a>
+          <p className="text-portfolio-brown font-bricolage text-xl md:text-[32px] font-normal leading-normal">
+            Zalo
+          </p>
+        </div>
+
+        {/* Main CTA */}
+        <h2 className="text-portfolio-brown font-bricolage text-4xl sm:text-5xl md:text-6xl lg:text-[96px] xl:text-[128px] font-semibold leading-tight mb-12 md:mb-20">
+          {"Soooo, Let's connect!"}
+        </h2>
+
+        {/* Copyright */}
+        <p className="text-[#D69D07] font-bricolage text-sm md:text-base font-normal text-right max-w-[200px] ml-auto">
+          Designed and built by Linh ©All rights reserved
+        </p>
+      </div>
+    </footer>
+  );
+}

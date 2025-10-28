@@ -4,10 +4,10 @@ import "./index.css";
 
 import Home from "./component/Home/homePage";
 import About from "./component/About/aboutPage";
-import ProjectDetail from "./component/Home/projectDetail";
-// import Cyhome from "./component/Details/Cyhome/CyhomeProject";
-// import Pharmacity from "./component/Details/Pharmacity/PharmaProject";
-// import ECOMerchant from "./component/Details/ECO/ECOProject";
+//import ProjectDetail from "./component/Home/projectDetail";
+import Cyhome from "./component/Details/Cyhome/CyhomeProject";
+import Pharmacity from "./component/Details/Pharmacity/PharmaProject";
+import ECOMerchant from "./component/Details/ECO/ECOProject";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -31,10 +31,10 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
-            {/* <Route path="/cyhome" element={<Cyhome />} />
+            <Route path="/cyhome" element={<Cyhome />} />
             <Route path="/pharmacity" element={<Pharmacity />} />
-            <Route path="/eco-merchant" element={<ECOMerchant />} /> */}
-            <Route path="/project/:id" element={<ProjectDetail />} />
+            <Route path="/eco-merchant" element={<ECOMerchant />} />
+            {/* <Route path="/project/:id" element={<ProjectDetail />} /> */}
           </Routes>
         </div>
       )}
